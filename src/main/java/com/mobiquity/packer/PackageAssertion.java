@@ -3,12 +3,15 @@ package com.mobiquity.packer;
 import com.mobiquity.exception.APIException;
 import com.mobiquity.packer.model.Item;
 import com.mobiquity.packer.model.Package;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Objects;
 
+@Slf4j
 public class PackageAssertion {
     public static void validate(List<Package> packages) throws APIException {
+        log.info("Validating packages");
         validatePackageList(packages);
     }
 

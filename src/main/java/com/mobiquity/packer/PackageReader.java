@@ -3,6 +3,7 @@ package com.mobiquity.packer;
 import com.mobiquity.exception.APIException;
 import com.mobiquity.packer.model.Item;
 import com.mobiquity.packer.model.Package;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@Slf4j
 public class PackageReader {
     public static final String WEIGHT_LIMIT_REGEX = "(\\d+(\\.?\\d+)?)";
     public static final String WEIGHT_LIMIT_SEPARATOR_REGEX = "(\\s:\\s)";
@@ -22,6 +24,7 @@ public class PackageReader {
     public static final String PACKAGE_REGEX = WEIGHT_LIMIT_REGEX + WEIGHT_LIMIT_SEPARATOR_REGEX + MULTIPLE_ITEMS_REGEX;
 
     public static List<Package> find(String path) throws APIException {
+        log.info("Reading packages from file '{}'", path);
         String rawPackagesContent = getLinesContentForPath(path);
         return getPackagesForContent(rawPackagesContent);
     }

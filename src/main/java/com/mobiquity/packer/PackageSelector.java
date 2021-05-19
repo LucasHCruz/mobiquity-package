@@ -3,16 +3,19 @@ package com.mobiquity.packer;
 import com.mobiquity.packer.model.Item;
 import com.mobiquity.packer.model.Package;
 import com.mobiquity.packer.model.PackagePossibility;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 public class PackageSelector {
     private static final Double COST_LIMIT = 100.00;
 
     public static List<Package> select(List<Package> packages) {
+        log.info("Selecting best package combinations");
         removeHeavyItems(packages);
         removeExpensiveItems(packages);
         selectBestItems(packages);

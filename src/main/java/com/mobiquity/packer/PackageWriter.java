@@ -2,13 +2,16 @@ package com.mobiquity.packer;
 
 import com.mobiquity.packer.model.Item;
 import com.mobiquity.packer.model.Package;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Slf4j
 public class PackageWriter {
     public static String write(List<Package> packagesFounded) {
+        log.info("Generating packages output");
         return printItems(packagesFounded);
     }
 

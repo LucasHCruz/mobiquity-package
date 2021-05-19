@@ -4,7 +4,7 @@
 This project has the main goal to generate all possible combinations giving an input os packages. The algorithm should select the lighter and expensive combination of items.
 
 #### How to RUN
-To run the API you just need to import the API in your project and call the method `Packer.pack(filePath)` passing a valid input file.
+To run the API you just need to import the API in your project and call the method `Packer.pack(filePath)` passing a valid input file. Use the example_input file in the project folder to test.
 
 > Add the dependency:
 ~~~XML

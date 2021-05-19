@@ -1,4 +1,4 @@
-mobiquity-package
+#####The project is in Java 11
 
 #### About
 This project has the main goal to generate all possible combinations giving an input os packages. The algorithm should select the lighter and expensive combination of items.
